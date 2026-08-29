@@ -47,6 +47,28 @@
             $possuiMaisPontosNome = $times[3]['nome'];
         }
         
+        if($pontosA == $pontosB && $pontosA == $pontosC && $pontosA == $pontosD) {
+            if($times[0]['vitorias'] > $times[$i]['vitorias']) {
+                $possuiMaisPontos = $pontosA;
+                $possuiMaisPontosNome = $times[0]['nome'];
+            }
+        } else if($pontosB == $pontosA && $pontosB == $pontosC && $pontosB == $pontosD) {
+            if($times[1]['vitorias'] > $times[$i]['vitorias']) {
+                $possuiMaisPontos = $pontosA;
+                $possuiMaisPontosNome = $times[1]['nome'];
+            }
+        } else if($pontosC == $pontosA && $pontosC == $pontosB && $pontosC == $pontosD) {
+            if($times[2]['vitorias'] > $times[$i]['vitorias']) {
+                $possuiMaisPontos = $pontosA;
+                $possuiMaisPontosNome = $times[2]['nome'];
+            }
+        } else if($pontosD == $pontosA && $pontosD == $pontosB && $pontosD == $pontosC) {
+            if($times[3]['vitorias'] > $times[$i]['vitorias']) {
+                $possuiMaisPontos = $pontosA;
+                $possuiMaisPontosNome = $times[3]['nome'];
+            }
+        } 
+        
         if($pontosA < $pontosB && $pontosA < $pontosC && $pontosA < $pontosD) {
             $possuiMenosPontos = $pontosA;
             $possuiMenosPontosNome = $times[0]['nome'];
@@ -79,5 +101,3 @@
     // echo "\nPontos de A: $pontosA \nPontos de B: $pontosB \nPontos de C: $pontosC \nPontos de D: $pontosD \n";
     echo "\nPontos totais: ".$pontosA + $pontosB + $pontosC + $pontosD;
 ?>
-
-///////////////////////// verificar criterio de desempate

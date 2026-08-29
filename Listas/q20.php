@@ -6,7 +6,7 @@
         ["numero" => 30, "nome" => "Maria", "votos" => 0]
     ];
 
-    $votos = [10, 20, 10, 30, 30, 30, 20, 10, 50, 30, 20, 30, 50, 10];
+    $votos = [10, 20, 10, 30, 30, 30, 20, 10, 50, 30, 20, 30, 50, 10,];
 
     $quantidadeDeVotosNulo = 0;
     $totalVotosValidos = 0;
@@ -21,15 +21,15 @@
             } else if ($votos[$c] == 30 && $i == 2) {
                 $candidatos[$i]['votos']++;
                 $totalVotosValidos++;
-            } else if ($votos[$i] != 10 && 20 && 30) { // 30
-                $quantidadeDeVotosNulo++;
+            } else { 
+                $quantidadeDeVotosNulo++; // 2
             }
         }
 
         echo "Candidato: ".$candidatos[$i]['nome']." (".$candidatos[$i]['numero'].") | n° votos: ".$candidatos[$i]['votos']." votos \n";
     }
 
-    echo "\nQuantidade de votos nulos: $quantidadeDeVotosNulo\n"; ////////////////////////////////////
+    echo "\nQuantidade de votos nulos: $quantidadeDeVotosNulo\n"; //////////////////////////////////////////////////////// votos nulo com erro
 
     echo "\nTotal de votos válidos: $totalVotosValidos \n"; //12
     
@@ -53,6 +53,10 @@
         // }
     }
 
-    echo "\nCandidato vencedor: nome (".max($votos)." votos)"; ///////////////////////////////////////////
+    foreach($candidatos as $candidato) {
+        if($candidato['votos'] == max($votos)) {
+            echo "\nCandidato vencedor: ".$candidato['nome']." (".$candidato['votos']." votos)"; 
+        }
+    }
 
 ?>
